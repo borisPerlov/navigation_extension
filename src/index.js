@@ -11,9 +11,7 @@ import { render } from './root';
 //   expression: 'optional'
 // };
 
-export default function supernova(galaxy) {
-  return {
-    // ext: {
+   // ext: {
     //   definition: {
     //     type: 'items',
     //     component: 'accordion',
@@ -33,19 +31,23 @@ export default function supernova(galaxy) {
     //     },
     //   },
     // },
+
+export default function supernova(galaxy) {
+  return {
+ 
     qae: {
       properties,
       data,
     },
 
     component() {
+      debugger;
       const el = useElement();
       const layout = useLayout();
       const app = useApp();
       const getSheets = () => {
         return app.getAllInfos().then(infos => {
           return infos.filter(infoItem => infoItem.qType === 'sheet').map(sheet => {
-            debugger;
             const item = {
               value: sheet.qId
             }
